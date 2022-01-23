@@ -246,3 +246,22 @@
   });
 
 })()
+
+$("#submit-form").submit((e)=>{
+    e.preventDefault()
+    $.ajax({
+        url:"https://script.google.com/macros/s/AKfycby8KFHFtCXSswd9jQCkarJaoCCODlE5I8A_BBJOd3dSAuEzuxZO/exec",
+        url:"https://script.google.com/macros/s/AKfycby8KFHFtCXSswd9jQCkarJaoCCODlE5I8A_BBJOd3dSAuEzuxZO/exec",
+        data:$("#submit-form").serialize(),
+        method:"post",
+        success:function (response){
+            alert("Form submitted successfully")
+            window.location.reload()
+            window.location.href="index.html"
+        },
+        error:function (err){
+            alert("Something Error")
+
+        }
+    })
+})
