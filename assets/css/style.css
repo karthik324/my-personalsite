@@ -525,7 +525,7 @@ section {
 .about .image {
   background: url("../img/IMG_20211223_084755_675.jpg") center center no-repeat;
   background-size: cover;
-  min-height: 500px;
+  min-height: 700px;
 }
 .about .skills-content {
   margin-top: 30px;
@@ -659,6 +659,13 @@ section {
 }
 .services .icon-box:hover .title a {
   color: #ffb727;
+}
+@media (max-width: 574px) {
+  .cardService{
+    justify-content: space-around;
+    align-items: center;
+   
+  }
 }
 
 /*--------------------------------------------------------------
