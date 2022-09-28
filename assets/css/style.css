@@ -266,7 +266,7 @@ h1, h2, h3, h4, h5, h6 {
 #hero {
   width: 100%;
   height: 100vh;
-  background: url("../img/hero-image.svg") top right;
+  background: url("../img/flutter-new-logo.jpg") top right;
   background-size: cover;
   background-position: center;
   position: relative;
@@ -1124,8 +1124,9 @@ section {
 # Footer
 --------------------------------------------------------------*/
 #footer {
-  background: url("../img/footer-bg.jpg") top center no-repeat;
+  background: url("https://pbs.twimg.com/media/FKNlhKZUcAEd7FY?format=jpg&name=4096x4096") top center no-repeat;
   background-size: cover;
+  background-position: center;
   color: #fff;
   font-size: 14px;
   text-align: center;
