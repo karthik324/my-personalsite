@@ -1,506 +1,503 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Karthik Dileep | Portfolio</title>
 
-  <title>Karhik Dileep</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-  <!-- Favicons -->
-  <link href="assets/img/letter-k.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+<style>
+:root{
+  --bg:#0b0f17;
+  --text:#ffffff;
+  --accent: #6366f1;
+  --card-bg: #1e1e1e;
+  --card:rgba(255,255,255,0.05);
+  --nav:rgba(0,0,0,0.4);
+  --grid:rgba(0,255,255,0.07);
+}
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Satisfy" rel="stylesheet">
+body.light {
+  --card-bg: #ffffff;
+}
 
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+.light{
+  --bg:#f5f7fa;
+  --text:#111;
+  --accent:#007cf0;
+  --card:rgba(0,0,0,0.05);
+  --nav:rgba(255,255,255,0.7);
+  --grid:rgba(0,0,0,0.05);
+}
 
-  <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  scroll-behavior:smooth;
+  font-family:'Poppins',sans-serif;
+  transition:background .4s,color .4s;
+}
 
-  <!-- =======================================================
-  * Template Name: Laura - v4.7.0
-  * Template URL: https://bootstrapmade.com/laura-free-creative-bootstrap-theme/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+body{
+  background:var(--bg);
+  color:var(--text);
+  overflow-x:hidden;
+}
+
+/* GRID BACKGROUND */
+body::before{
+  content:"";
+  position:fixed;
+  width:100%;
+  height:100%;
+  background-image:
+  linear-gradient(var(--grid) 1px, transparent 1px),
+  linear-gradient(90deg,var(--grid) 1px, transparent 1px);
+  background-size:40px 40px;
+  z-index:-1;
+}
+
+/* PROGRESS BAR */
+#progress{
+  position:fixed;
+  top:0;
+  left:0;
+  height:4px;
+  background:var(--accent);
+  width:0%;
+  z-index:2000;
+}
+
+/* NAVBAR */
+nav{
+  position:fixed;
+  top:20px;
+  left:50%;
+  transform:translateX(-50%);
+  width:90%;
+  max-width:1000px;
+  padding:15px 40px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  backdrop-filter:blur(20px);
+  background:var(--nav);
+  border-radius:50px;
+  z-index:1000;
+}
+
+nav h2{
+  color:var(--accent);
+}
+
+nav ul{
+  display:flex;
+  gap:25px;
+  list-style:none;
+}
+
+nav a{
+  text-decoration:none;
+  color:var(--text);
+}
+
+nav a:hover{
+  color:var(--accent);
+}
+
+/* TOGGLE BUTTON */
+.toggle{
+  cursor:pointer;
+  padding:6px 12px;
+  border-radius:20px;
+  border:1px solid var(--accent);
+  font-size:0.9rem;
+}
+
+/* HERO */
+.hero{
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  text-align:center;
+}
+
+.hero h1{
+  font-size:3rem;
+}
+
+.typing{
+  color:var(--accent);
+  margin-top:10px;
+}
+
+/* SECTION */
+section{
+  padding:120px 10%;
+}
+
+.section-title{
+  text-align:center;
+  font-size:2.5rem;
+  margin-bottom:50px;
+}
+
+/* SKILL BARS */
+.skills-section {
+  padding: 100px 10%;
+  text-align: center;
+}
+
+.skills-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+}
+
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.skill-card {
+  background: var(--card-bg);
+  padding: 30px;
+  border-radius: 16px;
+  transition: 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.skill-card:hover {
+  transform: translateY(-10px);
+}
+
+.skill-card h3 {
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.skill-tags span {
+  background: var(--accent);
+  color: white;
+  padding: 8px 14px;
+  border-radius: 30px;
+  font-size: 0.85rem;
+  transition: 0.3s ease;
+}
+
+.skill-tags span:hover {
+  transform: scale(1.05);
+}
+
+
+.bar{
+  height:8px;
+  background:#2223;
+  border-radius:10px;
+  overflow:hidden;
+}
+
+.bar-fill{
+  height:100%;
+  width:0;
+  background:var(--accent);
+  transition:1.5s;
+}
+
+/* CARDS */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:30px;
+}
+
+.card{
+  background:var(--card);
+  padding:25px;
+  border-radius:20px;
+  backdrop-filter:blur(10px);
+  transition:.4s;
+}
+
+.card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 0 20px var(--accent);
+}
+
+/* CONTACT */
+.contact{
+  text-align:center;
+}
+
+/* FADE */
+.fade{
+  opacity:0;
+  transform:translateY(40px);
+  transition:.8s;
+}
+
+.fade.active{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.github-only {
+  display: flex;
+  justify-content: center;
+}
+
+.github-card {
+  max-width: 700px;
+  text-align: center;
+  padding: 60px 40px;
+  border-radius: 25px;
+  background: var(--card);
+  backdrop-filter: blur(15px);
+  transition: 0.4s ease;
+  border: 1px solid transparent;
+}
+
+.github-card:hover {
+  transform: translateY(-10px);
+  border: 1px solid var(--accent);
+  box-shadow: 0 0 40px var(--accent);
+}
+
+.github-card h3 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+.github-card p {
+  opacity: 0.85;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.github-main-btn {
+  display: inline-block;
+  padding: 14px 32px;
+  background: var(--accent);
+  color: white;
+  border-radius: 40px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.github-main-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 25px var(--accent);
+}
+</style>
 </head>
 
 <body>
 
-  <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top d-flex justify-content-center align-items-center header-transparent">
+<div id="progress"></div>
 
-    <nav id="navbar" class="navbar">
-      <ul>
-        <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-        <li><a class="nav-link scrollto" href="#about">About</a></li>
-        <li><a class="nav-link scrollto" href="#resume">Skills</a></li>
-        <li><a class="nav-link scrollto" href="#services">Services</a></li>
-        <li><a class="nav-link scrollto " href="#portfolio">Portfolio</a></li>
-        <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-      </ul>
-      <i class="bi bi-list mobile-nav-toggle"></i>
-    </nav><!-- .navbar -->
+<nav>
+  <h2>Karthik</h2>
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="toggle" id="themeToggle" onclick="toggleTheme()"></div>
+</nav>
 
-  </header><!-- End Header -->
+<section class="hero" id="home">
+  <h1>Hi, I'm Karthik Dileep</h1>
+  <div class="typing"></div>
+</section>
 
-  <!-- ======= Hero Section ======= -->
-  <section id="hero">
-    <div class="hero-container">
-      <h1>Karthik Dileep</h1>
-      <h2>I'm a Flutter Developer</h2>
-      <a href="#about" class="btn-scroll scrollto" title="Scroll Down"><i class="bx bx-chevron-down"></i></a>
-    </div>
-  </section><!-- End Hero -->
+<section id="about" class="fade">
+  <h2 class="section-title">About Me</h2>
+  <p style="text-align:center; max-width:800px; margin:auto;">
+    I’m a Software Engineer with 3 years of experience, currently working at a fast-paced startup where I build scalable, production-ready mobile applications.
+My primary expertise is in Flutter, and I’ve shipped cross-platform applications for both Android and iOS. I enjoy crafting smooth UI experiences, optimizing performance, and turning product ideas into polished, user-focused apps.
+Beyond mobile development, I’ve also handled backend systems — designing APIs, managing databases, and ensuring end-to-end integration. This full-stack exposure helps me think beyond features and understand complete system architecture.
+I’ve mentored junior developers, reviewed code, and contributed to building engineering standards within my team. I enjoy sharing knowledge and helping others grow.
+Outside of work, I create memes, edit videos, and play football regularly. I believe creativity and teamwork — whether in code or on the field — shape better engineers.
+  </p>
+</section>
 
-  <main id="main">
+<section id="skills" class="skills-section">
+  <h2>Skills</h2>
 
-    <!-- ======= About Me Section ======= -->
-    <section id="about" class="about">
-      <div class="container">
+  <div class="skills-container">
 
-        <div class="section-title">
-          <span>About Me</span>
-          <h2>About Me</h2>
-        </div>
-
-        <div class="row">
-          <div class="image col-lg-4 d-flex align-items-stretch justify-content-center justify-content-lg-start rounded"></div>
-          <div class="col-lg-8 d-flex flex-column align-items-stretch">
-            <div class="content ps-lg-4 d-flex flex-column justify-content-center">
-              <div class="row">
-                <div class="container">
-                  <p><em>HI i'm Karthik, an 19 year old flutter developer, I know it sounds funny to hear about an 19 year old flutter developer but i know what i'm doing. My biggest passion is to become a MAANGM engineer, plus I love physics and Astronomy so I always wanted to work in SpaceX also.
-                    Each and everyday I'm improving my skills in programming, yeah physics can wait for some time. So if you want to see what I can do, you know wherer to find me.</em></p>
-                </div>
-                <div class="col-lg-6 pt-4">
-                  <ul>
-                    <li><i class="bi bi-chevron-right"></i> <strong>Name:</strong> <span>Karthik Dileep</span></li>
-                    <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>+91 8590652037</span></li>
-                    <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>Thodupuzha, Idukki</span></li>
-                  </ul>
-                </div>
-                <div class="col-lg-6 pt-4">
-                  <ul>
-                    <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>19</span></li>
-                    <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>karthikdileep003@gmail.com</span></li>
-                    <li><i class="bi bi-chevron-right"></i> <strong>Freelance:</strong> <span>Available</span></li>
-                  </ul>
-                </div>
-              </div>
-              <div class="row mt-n3">
-                <div class="col-md-6 mt-5 d-md-flex align-items-md-stretch">
-                  <div class="count-box">
-                    <i class="bi bi-emoji-smile" style="color: #20b38e;"></i>
-                    <span data-purecounter-start="0" data-purecounter-end="2" data-purecounter-duration="1" class="purecounter"></span>
-                    <p><strong>Happy Clients</strong></p>
-                  </div>
-                </div>
-
-                <div class="col-md-6 mt-5 d-md-flex align-items-md-stretch">
-                  <div class="count-box">
-                    <i class="bi bi-journal-richtext" style="color: #8a1ac2;"></i>
-                    <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1" class="purecounter"></span>
-                    <p><strong>Projects</strong></p>
-                  </div>
-                </div>
-
-                <div class="col-md-6 mt-5 d-md-flex align-items-md-stretch">
-                  <div class="count-box">
-                    <i class="bi bi-clock" style="color: #2cbdee;"></i>
-                    <span data-purecounter-start="0" data-purecounter-end="1" data-purecounter-duration="1" class="purecounter"></span>
-                    <p><strong>Years of experience</strong></p>
-                  </div>
-                </div>
-
-                <div class="col-md-6 mt-5 d-md-flex align-items-md-stretch">
-                  <div class="count-box">
-                    <i class="bi bi-award" style="color: #ffb459;"></i>
-                    <span data-purecounter-start="0" data-purecounter-end="2" data-purecounter-duration="1" class="purecounter"></span>
-                    <p><strong>Companies</strong></p>
-                  </div>
-                </div>
-              </div>
-            </div><!-- End .content-->
-
-            <div class="skills-content ps-lg-4">
-              <div class="progress">
-                <span class="skill">Flutter <i class="val">90%</i></span>
-                <div class="progress-bar-wrap">
-                  <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="90"></div>
-                </div>
-              </div>
-
-              <div class="progress">
-                <span class="skill">Front-end Web developement<i class="val">70%</i></span>
-                <div class="progress-bar-wrap">
-                  <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="80"></div>
-                </div>
-              </div>
-
-              <div class="progress">
-                <span class="skill">Database Management <i class="val">60%</i></span>
-                <div class="progress-bar-wrap">
-                  <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="60"></div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-      </div>
-    </section><!-- End About Me Section -->
-
-    <!-- ======= My Resume Section ======= -->
-    <section id="resume" class="resume">
-      <div class="container">
-
-        <div class="section-title">
-          <span>My Resume</span>
-          <h2>My Resume</h2>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-6">
-            <h3 class="resume-title">Summary</h3>
-            <div class="resume-item pb-0">
-              <h4>Brief summary</h4>
-              <p><em>As you know i'm a Flutter developer and i've worked in
-                . Zeropay
-                . Orazo
-                I have 1 year experience in Flutter. I'm a freelance front-end web developer, and I'll do flutter also, plus I know Java and C</em></p>
-              <p>
-              <ul>
-                <li>Idukki, Kerala</li>
-                <li>+91 8590652047</li>
-                <li>karthikdileep003@gmail.com</li>
-              </ul>
-              </p>
-            </div>
-
-            <h3 class="resume-title">Education</h3>
-            <div class="resume-item">
-              <h4>Bio Maths student (+2)</h4>
-              <h5>2019 - 2021</h5>
-              <p><em>SAHSS Karmikunnam, Thodupuzha</em></p>
-              <p>Completed High school studies.</p>
-            </div>
-            
-          </div>
-          <div class="col-lg-6">
-            <h3 class="resume-title">Professional Experience</h3>
-            <div class="resume-item">
-              <h4>Flutter developer</h4>
-              <h5>2022</h5>
-              <p><em>HSR Layout, Bengaluru </em></p>
-              <p>
-              <ul>
-                <li>Part of the design, development, and implementation of the design.</li>
-                <li>Co-lead of interns.</li>
-                <li>Created both iOS and Android app.</li>
-              </ul>
-              </p>
-            </div>
-            <div class="resume-item">
-              <h4>Flutter Developer</h4>
-              <h5>2022</h5>
-              <p><em>Kormangala, Bengaluru</em></p>
-              <p>
-              <ul>
-                <li>Developed numerous marketing programs (logos, brochures,infographics, presentations, and advertisements).</li>
-                <li>Managed to the whole UI within 2 weeks</li>
-                <li>Recommended and consulted with clients on the most appropriate app developer</li>
-                <li>Able to work as a team and I'm a team player</li>
-              </ul>
-              </p>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section><!-- End My Resume Section -->
-
-    <!-- ======= My Services Section ======= -->
-    <section id="services" class="services">
-      <div class="container">
-
-        <div class="section-title">
-          <span>My Services</span>
-          <h2>My Services</h2>
-        </div>
-
-        <div class="row">
-          <div class="col-md-4 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0 cardService">
-            <div class="icon-box">
-              <div class="icon"><i class=""><img src="assets/img/flutter-1324440160105193890_32.ico" alt=""></i>
-              </div>
-              <h4 class="title"><a href="">Flutter</a></h4>
-              <p class="description">Building apps for both iOS and Android for your desire</p>
-            </div>
-          </div>
-          <div class="col-md-4 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0 cardService">
-            <div class="icon-box">
-              <div class="icon"><i class=""><img src="assets/img/design.png" alt=""></i>
-              </div>
-              <h4 class="title"><a href="">UI UX</a></h4>
-              <p class="description">Designing the UI UX of web and app as you wish</p>
-            </div>
-          </div>
-
-          <div class="col-md-4 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0 cardService">
-            <div class="icon-box">
-              <div class="icon"><i class=""><img src="assets/img/freelancer.png" alt=""></i>
-              </div>
-              <h4 class="title"><a href="">Freelance App developement</a></h4>
-              <p class="description">Data management and advanced analytics</p>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section><!-- End My Services Section -->
-
-    <!-- ======= Testimonials Section ======= -->
-    <section id="testimonials" class="testimonials">
-      <div class="container position-relative">
-
-        <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
-          <div class="swiper-wrapper">
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="assets/img/nikhil sir.jpeg" class="testimonial-img" alt="">
-                <h3>NIkhil Kilivayil</h3>
-                <h4>Ceo &amp; Founder of Packapeer Academy</h4>
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Brave kid in such a young age
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="https://media-exp1.licdn.com/dms/image/D5603AQGDJFT-rbVREA/profile-displayphoto-shrink_200_200/0/1636343115067?e=1649289600&v=beta&t=9qN7ZAlzOlRi93A3LM7v477USl-uuOpWgKguo3yMJKQ" class="testimonial-img" alt="">
-                <h3>Muhammad Faizal</h3>
-                <h4>Founder of Stargram</h4>
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                 Creative and cheerful young Flutter developer
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-              </div>
-            </div><!-- End testimonial item -->
-
-          </div>
-          <div class="swiper-pagination"></div>
-        </div>
-
-      </div>
-    </section><!-- End Testimonials Section -->
-
-    <!-- ======= My Portfolio Section ======= -->
-    <section id="portfolio" class="portfolio">
-      <div class="container">
-
-        <div class="section-title">
-          <span>My Portfolio</span>
-          <h2>My Portfolio</h2>
-        </div>
-
-        <ul id="portfolio-flters" class="d-flex justify-content-center">
-          <li data-filter="*" class="filter-active">All</li>
-          <li data-filter=".filter-app">App</li>
-          <li data-filter=".filter-web">Web</li>
-        </ul>
-
-        <div class="row portfolio-container">
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-img"><img src="https://play-lh.googleusercontent.com/0_ni6lOZs07uI6lvfrDyoNZ_fBeFkF3NAMapBYF0BoLJGoaaWuxkideP7IE1IRGsaAI=w416-h235-rw" class="img-fluid" alt=""></div>
-            <div class="portfolio-info">
-              <h4>Fin Trac</h4>
-              <p>App</p>
-              <a href="https://play-lh.googleusercontent.com/0_ni6lOZs07uI6lvfrDyoNZ_fBeFkF3NAMapBYF0BoLJGoaaWuxkideP7IE1IRGsaAI=w416-h235-rw" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Fin Trac"><i class="bx bx-plus"></i></a>
-              <a href="https://play.google.com/store/apps/details?id=in.brototype.money_manager_app" class="details-link" title="More Details" target="blank"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-img"><img src="assets/img/krislin_title_icon.jpg" class="img-fluid" alt=""></div>
-            <div class="portfolio-info">
-              <h4>Krislin</h4>
-              <p>Web</p>
-              <a href="assets/img/krislin_title_icon.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Krislin"><i class="bx bx-plus"></i></a>
-              <a href="https://karthik324.github.io/krislin-site/" class="details-link" title="More Details" target="blank"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-img"><img src="https://miro.medium.com/max/888/1*Wb8QEZB1So-WbLkLq6wwZA.png" class="img-fluid" alt=""></div>
-            <div class="portfolio-info">
-              <h4>Lorem Picsum</h4>
-              <p>Web</p>
-              <a href="assets/img/lorem picsum.png" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Lorem Picsum"><i class="bx bx-plus"></i></a>
-              <a href="https://karthik324.github.io/lorem/" class="details-link" title="More Details" target="blank"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-img"><img src="assets/img/yt.png" class="img-fluid" alt=""></div>
-            <div class="portfolio-info">
-              <h4>YouTube</h4>
-              <p>Web</p>
-              <a href="assets/img/yt.png" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="YouTube"><i class="bx bx-plus"></i></a>
-              <a href="https://karthik324.github.io/youtube/" class="details-link" title="More Details" target="blank"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-img"><img src="assets/img/spacex.webp" class="img-fluid" alt=""></div>
-            <div class="portfolio-info">
-              <h4>SpaceX</h4>
-              <p>Web</p>
-              <a href="assets/img/spacex.webp" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
-              <a href="https://karthik324.github.io/spacex/" class="details-link" title="More Details" target="blank"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section><!-- End My Portfolio Section -->
-
-    <!-- ======= Contact Me Section ======= -->
-    <section id="contact" class="contact">
-      <div class="container">
-
-        <div class="section-title">
-          <span>Contact Me</span>
-          <h2>Contact Me</h2>
-        </div>
-
-        <div class="row">
-
-          <div class="col-lg-6">
-
-            <div class="row">
-              <div class="col-md-12">
-                <div class="info-box">
-                  <i class="bx bx-share-alt"></i>
-                  <h3>Social Profiles</h3>
-                  <div class="social-links">
-                    <a href="https://www.facebook.com/people/Karthik-Dileep/100006905238314/" class="facebook" target="blank"><i class="bi bi-facebook"></i></a>
-                    <a href="https://www.instagram.com/karthicc__/?utm_medium=copy_link" class="instagram" target="blank"><i class="bi bi-instagram"></i></a>
-                    <a href="https://in.linkedin.com/in/karthik-dileep-381648213" class="linkedin" target="blank"><i class="bi bi-linkedin"></i></a>
-                    <a href="https://github.com/karthik324" class="linkedin" target="blank"><i class="bi bi-github"></i></a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="info-box mt-4">
-                  <i class="bx bx-envelope"></i>
-                  <h3>Email Me</h3>
-                  <p>karthikdileep003@gmail.com</p>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="info-box mt-4">
-                  <i class="bx bx-phone-call"></i>
-                  <h3>Call Me</h3>
-                  <p>+91 8590652037</p>
-                </div>
-              </div>
-            </div>
-
-          </div>
-
-          <div class="col-lg-6">
-            <form action="" method="post" role="form" class="form" id="submit-form">
-              <div class="row">
-                <div class="col-md-6 form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
-                  <span id="name_error" style="font-family: Rubik,sans-serif; font-size: 14px;"></span>
-                </div>
-                <div class="col-md-6 form-group mt-3 mt-md-0">
-                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
-                </div>
-              </div>
-              <div class="form-group mt-3">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
-              </div>
-              <div class="form-group mt-3">
-                <textarea class="form-control" name="message" rows="6" placeholder="Message" required></textarea>
-              </div>
-              <div class="text-center"><button type="submit" class="mt-3">Send Message</button></div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section><!-- End Contact Me Section -->
-  </main><!-- End #main -->
-
-  <!-- ======= Footer ======= -->
-  <footer id="footer">
-    <div class="container">
-      <h3>Karthik Dileep</h3>
-      <p>Thank you for visiting my webpage.</p>
-      <div class="social-links">
-        <a href="https://www.facebook.com/people/Karthik-Dileep/100006905238314/" class="facebook" target="_blank"><i class="bx bxl-facebook"></i></a>
-        <a href="https://www.instagram.com/karthicc__/?utm_medium=copy_link" class="instagram" target="_blank"><i class="bx bxl-instagram"></i></a>
-        <a href="https://in.linkedin.com/in/karthik-dileep-381648213" class="linkedin" target="_blank"><i class="bx bxl-linkedin"></i></a>
-        <a href="https://github.com/karthik324" class="github" target="_blank"><i class="bx bxl-github"></i></a>
-      </div>
-      <div class="copyright">
-        &copy; Copyright <strong><span>Karthik</span></strong>. All Rights Reserved
+    <div class="skill-card">
+      <h3>🚀 Mobile Engineering</h3>
+      <div class="skill-tags">
+        <span>Flutter</span>
+        <span>Android</span>
+        <span>iOS</span>
+        <span>Bloc</span>
+        <span>Riverpod</span>
+        <span>Provider</span>
+        <span>GetX</span>
+        <span>Clean Architecture</span>
+        <span>Performance Optimization</span>
       </div>
     </div>
-  </footer><!-- End Footer -->
 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <div class="skill-card">
+      <h3>🌐 Backend & APIs</h3>
+      <div class="skill-tags">
+        <span>Node.js</span>
+        <span>MongoDB</span>
+        <span>SQL</span>
+        <span>REST</span>
+        <span>GraphQL</span>
+        <span>gRPC</span>
+      </div>
+    </div>
 
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/purecounter/purecounter.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
+    <div class="skill-card">
+      <h3>📊 Analytics & Monitoring</h3>
+      <div class="skill-tags">
+        <span>Mixpanel</span>
+        <span>Firebase Crashlytics</span>
+        <span>Production Debugging</span>
+        <span>App Monitoring</span>
+      </div>
+    </div>
 
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
-  <script src="assets/js/nameValid.js"></script>
-  <script>
-    $("#submit-form").submit((e) => {
-        e.preventDefault()
-        $.ajax({
-            url: "https://script.google.com/macros/s/AKfycby8KFHFtCXSswd9jQCkarJaoCCODlE5I8A_BBJOd3dSAuEzuxZO/exec",
-            data: $("#submit-form").serialize(),
-            method: "post",
-            success: function (response) {
-                alert("Form submitted successfully")
-                window.location.reload()
-            },
-            error: function (err) {
-                alert("Something Error")
+    <div class="skill-card">
+      <h3>🧠 Engineering Practices</h3>
+      <div class="skill-tags">
+        <span>Git</span>
+        <span>CI/CD</span>
+        <span>App Store Deployment</span>
+        <span>Play Store Deployment</span>
+        <span>Code Reviews</span>
+        <span>Mentoring</span>
+        <span>Agile Workflow</span>
+      </div>
+    </div>
 
-            }
-        })
-    });
+  </div>
+</section>
+
+
+<section id="projects" class="fade">
+  <h2 class="section-title">Projects</h2>
+
+  <div class="github-only">
+
+    <div class="github-card">
+      <h3>🚀 Explore My Work on GitHub</h3>
+
+      <p>
+        I actively build, experiment, and ship projects across mobile and backend systems.
+        You can explore all my repositories, experiments, and contributions on GitHub.
+      </p>
+
+      <a href="https://github.com/karthik324" 
+         target="_blank" 
+         class="github-main-btn">
+        Visit My GitHub Profile →
+      </a>
+
+    </div>
+
+  </div>
+</section>
+
+<section id="contact" class="contact fade">
+  <h2 class="section-title">Contact</h2>
+  <p>Email: karthikdileep003@gmail.com</p>
+  <p>Phone: +91 8590652037</p>
+</section>
+
+<script>
+/* THEME TOGGLE */
+const toggleBtn = document.getElementById("themeToggle");
+
+function updateButtonText() {
+  if (document.body.classList.contains("light")) {
+    toggleBtn.textContent = "Dark";
+  } else {
+    toggleBtn.textContent = "Light";
+  }
+}
+
+function toggleTheme(){
+  document.body.classList.toggle("light");
+
+  const currentTheme = document.body.classList.contains("light") 
+    ? "light" 
+    : "dark";
+
+  localStorage.setItem("theme", currentTheme);
+  updateButtonText();
+}
+
+/* Load Saved Theme */
+const savedTheme = localStorage.getItem("theme");
+
+if(savedTheme === "light"){
+  document.body.classList.add("light");
+}
+
+updateButtonText();
+
+
+/* TYPING */
+const words=["Software Engineer" ,"More likely a Flutter Developer","Maybe a Full-Stack Developer?"];
+let i=0,j=0,current="",del=false;
+const typing=document.querySelector(".typing");
+
+function type(){
+  current=words[i];
+  if(!del){
+    typing.textContent=current.substring(0,j++);
+    if(j>current.length){del=true;setTimeout(type,1000);return;}
+  }else{
+    typing.textContent=current.substring(0,j--);
+    if(j<0){del=false;i=(i+1)%words.length;}
+  }
+  setTimeout(type,del?50:100);
+}
+type();
+
+/* SCROLL PROGRESS */
+window.addEventListener("scroll",()=>{
+  const scrollTop=document.documentElement.scrollTop;
+  const height=document.documentElement.scrollHeight-document.documentElement.clientHeight;
+  document.getElementById("progress").style.width=(scrollTop/height)*100+"%";
+});
+
+/* ANIMATIONS */
+const faders=document.querySelectorAll(".fade");
+window.addEventListener("scroll",()=>{
+  faders.forEach(el=>{
+    if(el.getBoundingClientRect().top < window.innerHeight-100){
+      el.classList.add("active");
+    }
+  });
+
+  document.querySelectorAll(".bar-fill").forEach(bar=>{
+    if(bar.getBoundingClientRect().top < window.innerHeight-50){
+      bar.style.width=bar.dataset.width;
+    }
+  });
+});
 </script>
 
 </body>
-
 </html>
